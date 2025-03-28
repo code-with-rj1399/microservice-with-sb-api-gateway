@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: microservice-with-sb-api-gateway
+  config:
+    import: "optional:configserver:"
+#    import: "optional:configserver:http://localhost:8088"
+  cloud:
+    gateway:
+      routes:
+        - id: microservice-with-sb-department-service
+          uri: lb://microservice-with-sb-department-service
+          predicates:
+            - Path=/departments/**
+        - id: microservice-with-sb-employee-service
+          uri: lb://microservice-with-sb-employee-service
+          predicates:
+            - Path=/employee/**
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
+
+server:
+  port: 8083
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+
