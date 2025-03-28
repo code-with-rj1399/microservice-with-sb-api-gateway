@@ -2,6 +2,8 @@
 
 This application consists of 6 services.
 
+![architecture.png](src%2Fmain%2Fresources%2Farchitecture.png)
+
 ## 1. [API Gateway](https://github.com/code-with-rj1399/microservice-with-sb-api-gateway)
 - **Port:** `8083`
 - Acts as the entry point for handling and routing requests to the **[Department Service](https://github.com/code-with-rj1399/microservice-with-sb-department-service)** and **[Employee Service](https://github.com/code-with-rj1399/microservice-with-sb-employee-service)**.
@@ -81,4 +83,5 @@ Follow these steps to start the services in the correct order:
     - Access it at: [http://localhost:8083](http://localhost:8083)
 
 Now all services should be up and running!
+
 
