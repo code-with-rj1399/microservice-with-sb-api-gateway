@@ -1,6 +1,6 @@
-# Microservices Architecture
+# Microservices Architecture - Example
 
-This application consists of four services.
+This application consists of 5 services.
 
 ## 1. API Gateway
 - **Port:** `8083`
