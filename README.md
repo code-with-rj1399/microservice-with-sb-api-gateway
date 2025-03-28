@@ -1,19 +1,17 @@
 # Microservices Architecture - Example
 
-This application consists of 5 services.
+This application consists of 6 services.
 
-## 1. API Gateway
+## 1. [API Gateway](https://github.com/code-with-rj1399/microservice-with-sb-api-gateway)
 - **Port:** `8083`
 - Acts as the entry point for handling and routing requests to the **[Department Service](https://github.com/code-with-rj1399/microservice-with-sb-department-service)** and **[Employee Service](https://github.com/code-with-rj1399/microservice-with-sb-employee-service)**.
 - **URL:** [http://localhost:8083](http://localhost:8083)
-- **Repository:** [API Gateway Repo](https://github.com/code-with-rj1399/microservice-with-sb-api-gateway)
 
-## 2. Config Server
+## 2. [Config Server](https://github.com/code-with-rj1399/microservice-with-sb-config-server)
 - **Port:** `8088`
 - Centralized configuration service for managing settings of all microservices.
 - Services pull their configuration from this server on startup.
 - **URL:** [http://localhost:8088](http://localhost:8088)
-- **Repository:** [Config Server Repo](https://github.com/code-with-rj1399/microservice-with-sb-config-server)
 
 ## 3. Zipkin - Distributed Tracing Service
 - **Port:** `9411`
@@ -24,7 +22,7 @@ This application consists of 5 services.
   ```
     - Access it at: [http://localhost:9411/zipkin/](http://localhost:9411/zipkin/)
 
-## 4. Department Service
+## 4. [Department Service](https://github.com/code-with-rj1399/microservice-with-sb-department-service)
 - **Port:** `8081`
 - Registers with **[Eureka Service Registry](https://github.com/code-with-rj1399/microservice-with-sb-service-registry)**.
 - **URL:** [http://localhost:8081](http://localhost:8081)
@@ -33,9 +31,8 @@ This application consists of 5 services.
     - Get all departments: `GET /departments`
     - Get department by ID: `GET /departments/{id}`
     - Get all departments with employees: `GET /departments/with-employees`
-- **Repository:** [Department Service Repo](https://github.com/code-with-rj1399/microservice-with-sb-department-service)
 
-## 5. Employee Service
+## 5. [Employee Service](https://github.com/code-with-rj1399/microservice-with-sb-employee-service)
 - **Port:** `8082`
 - Registers with **[Eureka Service Registry](https://github.com/code-with-rj1399/microservice-with-sb-service-registry)**.
 - **URL:** [http://localhost:8082](http://localhost:8082)
@@ -43,19 +40,17 @@ This application consists of 5 services.
     - Add employee: `POST /employee`
     - Get all employees: `GET /employee`
     - Get employee by ID: `GET /employee/{id}`
-- **Repository:** [Employee Service Repo](https://github.com/code-with-rj1399/microservice-with-sb-employee-service)
 
-## 6. Service Registry (Eureka)
+## 6. [Service Registry (Eureka)](https://github.com/code-with-rj1399/microservice-with-sb-service-registry)
 - **Port:** `8761`
 - Centralized service registry for managing service discovery.
 - **URL:** [http://localhost:8761](http://localhost:8761)
-- **Repository:** [Service Registry Repo](https://github.com/code-with-rj1399/microservice-with-sb-service-registry)
 
 ## How to Start the Microservices
 Follow these steps to start the services in the correct order:
 
-1. **Start Eureka Service Registry**
-    - Clone the repository: [Service Registry Repo](https://github.com/code-with-rj1399/microservice-with-sb-service-registry)
+1. **Start [Eureka Service Registry](https://github.com/code-with-rj1399/microservice-with-sb-service-registry)**
+    - Clone the repository.
     - Open the project in your IDE, navigate to the `Application` class, and run it.
     - Access it at: [http://localhost:8761](http://localhost:8761)
 
@@ -65,24 +60,25 @@ Follow these steps to start the services in the correct order:
    ```
     - Access it at: [http://localhost:9411/zipkin/](http://localhost:9411/zipkin/)
 
-3. **Start Config Server**
-    - Clone the repository: [Config Server Repo](https://github.com/code-with-rj1399/microservice-with-sb-config-server)
+3. **Start [Config Server](https://github.com/code-with-rj1399/microservice-with-sb-config-server)**
+    - Clone the repository.
     - Open the project in your IDE, navigate to the `Application` class, and run it.
     - Access it at: [http://localhost:8088](http://localhost:8088)
 
-4. **Start Department Service**
-    - Clone the repository: [Department Service Repo](https://github.com/code-with-rj1399/microservice-with-sb-department-service)
+4. **Start [Department Service](https://github.com/code-with-rj1399/microservice-with-sb-department-service)**
+    - Clone the repository.
     - Open the project in your IDE, navigate to the `Application` class, and run it.
     - Access it at: [http://localhost:8081](http://localhost:8081)
 
-5. **Start Employee Service**
-    - Clone the repository: [Employee Service Repo](https://github.com/code-with-rj1399/microservice-with-sb-employee-service)
+5. **Start [Employee Service](https://github.com/code-with-rj1399/microservice-with-sb-employee-service)**
+    - Clone the repository.
     - Open the project in your IDE, navigate to the `Application` class, and run it.
     - Access it at: [http://localhost:8082](http://localhost:8082)
 
-6. **Start API Gateway**
-    - Clone the repository: [API Gateway Repo](https://github.com/code-with-rj1399/microservice-with-sb-api-gateway)
+6. **Start [API Gateway](https://github.com/code-with-rj1399/microservice-with-sb-api-gateway)**
+    - Clone the repository.
     - Open the project in your IDE, navigate to the `Application` class, and run it.
     - Access it at: [http://localhost:8083](http://localhost:8083)
 
 Now all services should be up and running!
+
